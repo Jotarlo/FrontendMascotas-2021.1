@@ -1,20 +1,23 @@
-
 <nav>
-    <div class="nav-wrapper green">
-      <a routerLink="/" class="brand-logo">Logo</a>
-      <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li *ngIf="isLoggedIn"><a routerLink="mascotas/admin">Mascotas</a></li>
-        <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
-        <li *ngIf="isLoggedIn"><a routerLink="seguridad/cambio-clave">Cambio Clave</a></li>
-        <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <ul class="sidenav" id="mobile-demo">
-    <li *ngIf="isLoggedIn"><a routerLink="mascotas/admin">Mascotas</a></li>
-    <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
-    <li *ngIf="isLoggedIn"><a routerLink="seguridad/cambio-clave">Cambio Clave</a></li>
-    <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
-  </ul>
+  <div class="nav-wrapper green">
+    <a routerLink="/" class="brand-logo">Logo</a>
+    <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="isLoggedIn"><a routerLink="mascotas/admin">Mascotas</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-departamento">Departamentos</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-ciudad">Ciudades</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="seguridad/cambio-clave">Cambio Clave</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li *ngIf="isLoggedIn"><a routerLink="mascotas/admin">Mascotas</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-departamento">Departamentos</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-ciudad">Ciudades</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="seguridad/cambio-clave">Cambio Clave</a></li>
+  <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
+</ul>

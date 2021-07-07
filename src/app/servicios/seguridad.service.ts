@@ -11,20 +11,31 @@ export class SeguridadService {
   url: String = DatosGenerales.urlBackend;
   datosUsuarioSession = new BehaviorSubject<UsuarioModelo>(new UsuarioModelo());
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.VerificarDatosSession();
   }
 
-  VerificarDatosSession(){
+  VerificarDatosSession() {
     let datos = this.ObtenerDatosLocalStorage();
-    if(datos){
-      let objetoDatos:UsuarioModelo = JSON.parse(datos);
+    if (datos) {
+      let objetoDatos: UsuarioModelo = JSON.parse(datos);
       objetoDatos.isLoggedIn = true;
       this.RefrescarDatosSession(objetoDatos);
     }
   }
 
-  ObtenerDatosLocalStorage(){
+  ObtenerToken() {
+
+    let datos = this.ObtenerDatosLocalStorage();
+    if (datos) {
+      let objetoDatos: UsuarioModelo = JSON.parse(datos);
+      return objetoDatos.token;
+    }
+    return "";
+
+  }
+
+  ObtenerDatosLocalStorage() {
     let datos = localStorage.getItem("sessionData");
     return datos;
   }
@@ -33,7 +44,7 @@ export class SeguridadService {
     this.datosUsuarioSession.next(usuario);
   }
 
-  ObtenerDatosSession(){
+  ObtenerDatosSession() {
     return this.datosUsuarioSession.asObservable();
   }
 
@@ -66,7 +77,7 @@ export class SeguridadService {
     }
   }
 
-  CerrarSesion(){
+  CerrarSesion() {
     localStorage.removeItem("sessionData");
     this.RefrescarDatosSession(new UsuarioModelo());
   }

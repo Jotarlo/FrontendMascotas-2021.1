@@ -1,1 +1,37 @@
-<p>listar-departamento works!</p>
+<br />
+<a class="waves-effect waves-light btn" routerLink="/parametros/crear-departamento"><i
+        class="material-icons left">add</i>Agregar Registro</a>
+
+<table class="table table-responsive">
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>
+            Acciones
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: 5, currentPage: pagina }">
+            <td>
+                {{r.id}}
+            </td>
+            <td>
+                {{r.nombre}}
+            </td>
+            <td>
+                <a class="waves-effect orange waves-light btn" routerLink="/parametros/editar-departamento/{{r.id}}"><i class="material-icons left">edit</i>Modificar</a>
+                &nbsp;&nbsp;
+                <button class="btn red waves-effect waves-light" type="button" (click)="VerificarEliminacion(r.id, r.nombre)" name="action">Eliminar
+                    <i class="material-icons right">delete</i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls  (pageChange)="pagina = $event"
+                      previousLabel="Anterior"
+                      nextLabel="Siguiente"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>

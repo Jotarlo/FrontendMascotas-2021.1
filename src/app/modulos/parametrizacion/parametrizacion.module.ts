@@ -22,6 +22,8 @@ import { CrearRazaComponent } from './raza/crear-raza/crear-raza.component';
 import { EditarRazaComponent } from './raza/editar-raza/editar-raza.component';
 import { EliminarRazaComponent } from './raza/eliminar-raza/eliminar-raza.component';
 import { ListarRazaComponent } from './raza/listar-raza/listar-raza.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -35,8 +37,8 @@ import { ListarRazaComponent } from './raza/listar-raza/listar-raza.component';
     ListarDepartamentoComponent,
     EliminarDepartamentoComponent,
     CrearCiudadComponent,
-    ListarCiudadComponent,
     EditarCiudadComponent,
+    ListarCiudadComponent,
     EliminarCiudadComponent,
     CrearTipoMascotaComponent,
     EditarTipoMascotaComponent,
@@ -49,7 +51,10 @@ import { ListarRazaComponent } from './raza/listar-raza/listar-raza.component';
   ],
   imports: [
     CommonModule,
-    ParametrizacionRoutingModule
+    ParametrizacionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ParametrizacionModule { }
