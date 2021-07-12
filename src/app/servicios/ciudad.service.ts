@@ -16,7 +16,7 @@ export class CiudadService {
   }
 
   ListarRegistros(): Observable<CiudadModelo[]> {
-    return this.http.get<CiudadModelo[]>(`${this.url}/ciudad/`, {
+    return this.http.get<CiudadModelo[]>(`${this.url}/ciudad/?filter={"include":["departamento"]}`, {
       headers: new HttpHeaders({
       })
     });

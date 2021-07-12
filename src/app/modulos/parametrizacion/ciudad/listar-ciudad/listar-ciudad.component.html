@@ -6,6 +6,7 @@
     <thead>
         <th>Id</th>
         <th>Nombre</th>
+        <th>Departamento</th>
         <th>
             Acciones
         </th>
@@ -17,6 +18,9 @@
             </td>
             <td>
                 {{r.nombre}}
+            </td>
+            <td>
+                {{r.departamento.nombre}}
             </td>
             <td>
                 <a class="waves-effect orange waves-light btn" routerLink="/parametros/editar-ciudad/{{r.id}}"><i class="material-icons left">edit</i>Modificar</a>

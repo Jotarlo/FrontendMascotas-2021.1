@@ -1,6 +1,8 @@
+import { DepartamentoModelo } from "./departamento.modelo";
+
 export class CiudadModelo{
     id?: number;
     nombre?: String;
     departamentoId?: number;
-    deptoNombre?:String;
+    departamento: DepartamentoModelo = new DepartamentoModelo();
 }
